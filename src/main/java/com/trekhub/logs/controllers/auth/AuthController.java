@@ -1,8 +1,10 @@
 package com.trekhub.logs.controllers.auth;
 
+import com.trekhub.logs.dtos.UserRegistrationDTO;
 import com.trekhub.logs.services.auth.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ public class AuthController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request){
+    public ResponseEntity<UserRegistrationDTO> register(@RequestBody RegisterRequest request){
         return  ResponseEntity.ok(service.register(request));
 
     }
@@ -30,4 +32,12 @@ public class AuthController {
         return  ResponseEntity.ok(service.authenticate(request));
 
     }
+    //a restricted route
+     @GetMapping("/greetings")
+    public ResponseEntity<String> greetings(){
+
+        return  ResponseEntity.ok("Hello from a restricted endpoint");
+
+    }
+
 }

@@ -2,6 +2,7 @@ package com.trekhub.logs.config;
 
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -32,10 +33,11 @@ public class JwtService {
 
     //generate a jwt token
     public String generateToken(
-            Map<String, Object> extraClaims,
+            
             UserDetails userDetails
     ){
-        return Jwts.builder().setClaims(extraClaims)
+        
+        return Jwts.builder()
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
@@ -44,9 +46,9 @@ public class JwtService {
     }
 
 
-    public String generateToken(UserDetails userDetails){
-        return generateToken(new HashMap<>(), userDetails);
-    }
+    // public String generateToken(UserDetails userDetails){
+    //     return generateToken(userDetails);
+    // }
 
 
     //validate a token
@@ -66,10 +68,12 @@ public class JwtService {
         return  extractClaim(jwtToken, Claims::getExpiration);
     }
     private Claims extractAllClaims(String jwtToken){
+        
         return Jwts.parserBuilder()
                 .setSigningKey(getSignInKey())
                 .build()
-                .parseClaimsJwt(jwtToken)
+                //parseClaimsJws not jwt to avoid getting error of unsupportedjwtclaims
+                .parseClaimsJws(jwtToken)
                 .getBody();
     }
 
