@@ -64,7 +64,8 @@ public class User implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        //with this set as false you could never get a viable token
+        return true;
     }
 
     @Override
