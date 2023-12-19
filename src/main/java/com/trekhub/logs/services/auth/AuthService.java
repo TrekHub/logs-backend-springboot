@@ -7,14 +7,19 @@ import com.trekhub.logs.controllers.auth.AuthenticationResponse;
 import com.trekhub.logs.controllers.auth.RegisterRequest;
 import com.trekhub.logs.models.user.Role;
 import com.trekhub.logs.models.user.User;
-import org.springframework.security.core.userdetails.UserDetails;
+
 
 import com.trekhub.logs.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 @RequiredArgsConstructor
@@ -35,9 +40,8 @@ public class AuthService {
                 .password(passwordEncoder.encode(request.getPassword())).role(Role.USER)
                 .build();
 
-
-
         userRepository.save(user);
+
 
         var jwtToken = jwtService.generateToken(user);
         return  AuthenticationResponse.builder()
@@ -46,10 +50,17 @@ public class AuthService {
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
-        );
+        Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
+        logger.log(Level.WARNING, "hello");
+//        authenticationManager.authenticate(
+//                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+//        );
         var user = userRepository.findByEmail(request.getEmail()).orElseThrow();
+
+        System.out.println(user);
+
+
         var jwtToken = jwtService.generateToken(user);
         return  AuthenticationResponse
                 .builder()
