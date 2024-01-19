@@ -43,24 +43,16 @@ public class SecurityConfig {
                 auth -> auth.requestMatchers("/api/v1/auth/authenticate","/api/v1/auth/register").permitAll().anyRequest().authenticated()
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-
                  .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class).httpBasic(Customizer.withDefaults());
-
-
-
-
         return httpSecurity.build();
     }
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-
         authProvider.setUserDetailsService(customUserDetailsService);
         authProvider.setPasswordEncoder(passwordEncoder());
-
-
         return  authProvider;
     }
    

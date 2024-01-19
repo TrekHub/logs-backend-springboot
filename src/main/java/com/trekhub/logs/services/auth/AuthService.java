@@ -9,6 +9,9 @@ import com.trekhub.logs.dtos.UserRegistrationDTO;
 import com.trekhub.logs.models.user.Role;
 import com.trekhub.logs.models.user.User;
 
+import org.apache.coyote.BadRequestException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -32,24 +35,35 @@ public class AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public UserRegistrationDTO register (RegisterRequest request){
+    public UserRegistrationDTO register (RegisterRequest request) {
 
 
         var user = User.builder()
-        .firstName(request.getFirstName())
+                .firstName(request.getFirstName())
                 .lastName(request.getLastName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword())).role(Role.USER)
                 .build();
 
 
-        //save user in db
-        userRepository.save(user);
-        //return a response to tell say user saved successfully
-        //dont return a token here, you have to let the user authenticate befre returning a token
-        return new  UserRegistrationDTO("saved successfully");
+        try {
+            //check if the user already exists (email)
+            if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+                return new UserRegistrationDTO("User Already exists");
+            } else {
+                //save user in db
+                userRepository.save(user);
+                //return a response to tell say user saved successfully
+                //don't return a token here, you have to let the user authenticate before returning a token
 
-       
+                return new UserRegistrationDTO("saved successfully");
+            }
+        } catch (
+                Exception ex
+        ) {
+            System.out.println(ex.getMessage());
+        }
+        return null;
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
@@ -75,10 +89,7 @@ public class AuthService {
             System.out.println(ex.getMessage());
             throw new BadCredentialsException("bad credentials");
         }
-        
         //generate a token that will be used to authenticate further incoming requests instead of requesting for email and password all the time
-        
-        
        }
 
 
