@@ -28,6 +28,344 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "password": "tedted"
 }
 
+<> 2024-02-12T152421.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T152349.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T152244.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T151817.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/authenticate
+Content-Type: application/json
+Content-Length: 54
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T151703.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T151548.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T151404.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T151338.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T151012.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+<> 2024-02-12T150812.200.json
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+Content-Length: 100
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "ted",
+  "lastName": "namani",
+  "email": "ted@namani.co",
+  "password": "tedted"
+}
+
 <> 2024-02-12T145034.200.json
 
 ###
