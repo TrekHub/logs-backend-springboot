@@ -29,3 +29,7 @@ spring:
      database: postgresql
      database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+   security:
+     user:
+       name: ted
+       password: tedted

@@ -9,6 +9,7 @@ import com.trekhub.logs.dtos.UserRegistrationDTO;
 import com.trekhub.logs.models.user.Role;
 import com.trekhub.logs.models.user.User;
 
+import jakarta.persistence.EntityExistsException;
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,13 @@ public class AuthService {
     public UserRegistrationDTO register (RegisterRequest request) {
 
 
+
+        String userEmail = request.getEmail();
+        if (userRepository.findByEmail(userEmail).isPresent()) {
+            throw new EntityExistsException("The User already exists");
+        }
+
+
         var user = User.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
@@ -45,25 +53,10 @@ public class AuthService {
                 .password(passwordEncoder.encode(request.getPassword())).role(Role.USER)
                 .build();
 
-
-        try {
-            //check if the user already exists (email)
-            if (userRepository.findByEmail(user.getEmail()).isPresent()) {
-                return new UserRegistrationDTO("User Already exists");
-            } else {
-                //save user in db
                 userRepository.save(user);
-                //return a response to tell say user saved successfully
-                //don't return a token here, you have to let the user authenticate before returning a token
 
-                return new UserRegistrationDTO("saved successfully");
-            }
-        } catch (
-                Exception ex
-        ) {
-            System.out.println(ex.getMessage());
-        }
-        return null;
+                return new  UserRegistrationDTO("User Successfully saved", userEmail);
+
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
